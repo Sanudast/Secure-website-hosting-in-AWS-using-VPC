@@ -20,10 +20,11 @@ AWS account with management console access and full access to VPC and EC2 servic
 
 1. Creating a VPC with CIDR subnet
 2. Creating 2 public and 1 private subnet.
-3. Creating private and public route tables and associate the subnets.
-4. Creating Internte gateway for public subnet and adding it to public route table.
-5. Creating Nat gateway for private subnet and adding it to private route table.
-6. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
+3. Enabling auto-assign public IPv4 address public subnets. 
+4. Creating private and public route tables and associate the subnets.
+5. Creating Internte gateway for public subnet and adding it to public route table.
+6. Creating Nat gateway for private subnet and adding it to private route table.
+7. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
 
 
 # 1- Creating a VPC with CIDR subnet
@@ -49,9 +50,20 @@ Go to subnets section in VPC console, from there we can create subnets for our V
 
 ![image](https://user-images.githubusercontent.com/100775801/161413527-2cfb2f9f-e240-4068-923f-e07fc93f59da.png)
 
-First we need to select our created VPC from the list box. Then we are creating 2 subnets for public and 1 subnet for private.
+First we need to select our created VPC from the list box. Then we are creating 2 subnets for public and 1 subnet for private, also selecting availability zones.
 Here am naming the public subnets as public-subnet-1 and public-subnet-2, private subnet as private-subnet-1.  Now we need to subnet the CIDR block, I'm using subnet calulatore for this. URL: https://www.calculator.net/ip-subnet-calculator.html?cclass=b&csubnet=18&cip=172.16.0.0%2F16&ctype=ipv4&printit=0&x=83&y=14
-Yu can refer the link for more informtaion about the subneting.
+you can refer the link for more informtaion about the subneting.
+
+![image](https://user-images.githubusercontent.com/100775801/161413979-246a335f-764d-42eb-9345-374474132806.png)
+![image](https://user-images.githubusercontent.com/100775801/161413989-9975682a-35da-4dbb-98ff-b2c4060f5256.png)
+![image](https://user-images.githubusercontent.com/100775801/161414002-7b8b1c67-a3bb-4feb-a5c8-be1bf8858d3c.png)
+![image](https://user-images.githubusercontent.com/100775801/161414016-e37bff81-5259-4afe-80ca-ceb5058d0b6c.png)
+![image](https://user-images.githubusercontent.com/100775801/161414033-64f48b15-98a5-4fee-9142-ed58a759acac.png)
+
+Subnet creation completed.
+
+# 3- Enabling auto-assign public IPv4 address public subnets
+
 
 
 
