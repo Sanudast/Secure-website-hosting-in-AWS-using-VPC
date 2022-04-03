@@ -180,6 +180,57 @@ Inbound rules
 ![image](https://user-images.githubusercontent.com/100775801/161417361-d6d57c0c-6319-472c-a867-7e2517936e17.png)
 
 
+# 11-Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
+
+Now we are going to create 3 instance. Select Ec2 from the drop-down. From the Ec2 dashboard, select instances section and click on Launch instances.
+
+## Bastion Instance
+
+Now we are going to create instance for Bastion server.
+
+![image](https://user-images.githubusercontent.com/100775801/161418277-a77837e7-f1dc-4b22-90c6-36c1997d6790.png)
+
+Select any Os as per our requirement. 
+
+![image](https://user-images.githubusercontent.com/100775801/161418304-2903d2a5-27bc-4022-86be-110611823d13.png)
+
+Choose an Instance Type.
+
+![image](https://user-images.githubusercontent.com/100775801/161418344-0483bea7-5b1b-454d-899d-7d94505bec76.png)
+
+Select the correct VPC from the list. choose a public subnet
+![image](https://user-images.githubusercontent.com/100775801/161418423-1ed442c8-c00f-4355-896a-5e98891b0b52.png)
+
+Adding Name tag as Bastion
+![image](https://user-images.githubusercontent.com/100775801/161418448-7c42643b-a1b6-48c7-bd62-a0d083da8577.png)
+
+Selecting the security group "bastion-sg" which we are already created for bastion server.
+![image](https://user-images.githubusercontent.com/100775801/161418483-bb3bd04d-c4a8-436d-8ed6-7c2b724f9381.png)
+
+Choose any of the key-pair and click launch instance.
+![image](https://user-images.githubusercontent.com/100775801/161418521-8c59b573-8ff2-4380-b145-5f2a46a81154.png)
+
+
+## Website Instance
+
+Now we are going to create instance for website server.
+We are going to create the website instance in public subnet and adding the group "wordpress-sg"
+Follow the previous steps to create instance.
+
+![image](https://user-images.githubusercontent.com/100775801/161418621-1c3d8200-1f61-4d12-ac42-b826b036c645.png)
+![image](https://user-images.githubusercontent.com/100775801/161418641-d01a5685-6942-4c86-a0a8-995fa7bb9a4f.png)
+![image](https://user-images.githubusercontent.com/100775801/161418649-5defae7f-06d7-45dd-9e85-d0a47d74eaf5.png)
+
+
+## Database Instance
+
+Now we are going to create instance for database server.
+We are going to create the database instance in private subnet and adding the group "database-sg"
+Follow the previous steps to create instance.
+
+![image](https://user-images.githubusercontent.com/100775801/161418779-4e7722fc-a69e-4a6e-899e-aa9195dfbecd.png)
+![image](https://user-images.githubusercontent.com/100775801/161418798-2de1acb9-d7f7-4ec2-9f03-2906ea3aef44.png)
+![image](https://user-images.githubusercontent.com/100775801/161418814-062f8271-d427-41dd-89f1-c56f000e2206.png)
 
 
 
