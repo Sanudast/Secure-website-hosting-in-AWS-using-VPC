@@ -21,10 +21,10 @@ AWS account with management console access and full access to VPC and EC2 servic
 1. Creating a VPC with CIDR subnet
 2. Creating 2 public and 1 private subnet.
 3. Enabling auto-assign public IPv4 address public subnets. 
-4. Creating Internte gateway and attaching to VPC
-5. Creating private and public route tables and associate the subnets.
-6. Creating Internte gateway for public subnet
-7. Creating Nat gateway for private subnet and adding it to private route table.
+4. Creating Internet gateway and attaching to VPC
+5. Creating public route tables and adding Internet gateway entry.
+6. Creating NAT gateway for private subnet
+7. Creating private route table and adding NAT gateway entry. Adding private subnet to route table association
 8. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
 
 
@@ -90,6 +90,41 @@ After creating the Internet gateway we are attaching it to our VPC. For that sel
 Then select the VPC and click attach internet gateway.
 
 ![image](https://user-images.githubusercontent.com/100775801/161414678-f62782a7-3ef1-45c5-bc17-084c4e2536bb.png)
+
+
+# 5- Creating public route tables and adding Internet gateway entry
+
+Now we are going to create a route table for public subnet and adding the internet gateway entry. Adding internet gateway in VPC for the communication with outside world. Go to route tables section, here we can see a deafult route table of our VPC. I'm using this route table as public route table. So am editing the name of the default route table to public-rtbl.
+
+![image](https://user-images.githubusercontent.com/100775801/161415322-9292eecb-2221-482f-ad99-511e405269b3.png)
+
+After that adding the internet gateway entry to the route table. 
+
+![image](https://user-images.githubusercontent.com/100775801/161415357-6ea105c1-6da8-4564-8aed-c1975749aef6.png)
+
+Now all the subnet are associated with public-rtbl. 
+
+# 6- Creating NAT gateway for private subnet
+
+NAT gateway is used to communicate a instance in private subnet to outside world. For creating NAT gateway go to the NAT gateway section and click create NAT gateway.
+
+![image](https://user-images.githubusercontent.com/100775801/161415562-8e4b6bc3-cb10-46a0-b2e9-ff02edbbb553.png)
+
+The Nat gateway should be created in a public-subnet so am selecting on of the created public-subnet and provide the name vpcproject-nat for nat gateway.
+Next we need to assign a elastic IP to nat gateway we can do that from the same section. After selecting all these settings create the NAT gateway.
+
+![image](https://user-images.githubusercontent.com/100775801/161415699-ac21a3f5-0663-4898-a45c-15d0a0167730.png)
+
+Once the status of the NAT gateway changed from Pending to Available the creation will complete.
+
+# 7-Creating private route table and adding NAT gateway entry. Adding private subnet to route table association
+
+Next we are going to create a private route table for private subnet. Click the create route table from route table section.
+![image](https://user-images.githubusercontent.com/100775801/161415880-aacd9469-74dd-4bc1-a39d-d6cc8301fc31.png)
+
+I'm providing private-rtbl as route table name and select the VPC.
+![image](https://user-images.githubusercontent.com/100775801/161415950-cb0c8231-4b87-47d9-8c71-8743f41fffc2.png)
+
 
 
 
