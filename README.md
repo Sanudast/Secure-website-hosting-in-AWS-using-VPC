@@ -147,6 +147,41 @@ Select the private subnet and click save associations
 ## Bastion server
 A bastion is a special purpose server instance that is designed to be the primary access point from the Internet and acts as a proxy to your other EC2 instances.
 
+As you can see in the diagram, we are creating a bastion server only for SSH to wordpress and database server. The SSH access to bastion server is only allowed from our IP. So SSH connections from other IPs are not allowed by the baston security group. 
+We can create the security group from security group section. Click create security group,
+
+Here am providing bastion-sg as security group name and selecting VPC. We can add a short description in description section. 
+
+![image](https://user-images.githubusercontent.com/100775801/161416865-4c8d2ca7-f47c-4c32-88a5-5b44ecb780c7.png)
+
+Now we are adding the SSH allow only from my IP rule in inbound rules and creating the security group.
+
+![image](https://user-images.githubusercontent.com/100775801/161416913-afe5ee72-b8f3-4ca9-a332-67e9f5ffb619.png)
+
+
+# 9-Creating security group for wordpress server
+
+In this security group we are only allowing SSH connection from servers which are using security group "bastion-sg". Also allowing 80,443 connections from all IPv4 and IPv6. Here am providing wordpress-sg as security group name.
+
+![image](https://user-images.githubusercontent.com/100775801/161417133-4c03687d-ec7f-4b21-99cd-4e2b951fc0bd.png)
+
+Inbound rules
+
+![image](https://user-images.githubusercontent.com/100775801/161417179-1a8373c1-ff6e-40d3-9100-c844b3d853f0.png)
+
+# 10-Creating security group for database server
+
+In this security grop we are only allow SSH connections from servers which are using security group "bastion-sg". Also allowing 3306 connections from servers which are using security group "wordpress-sg". Here am providing databases-sg as security group name.
+
+![image](https://user-images.githubusercontent.com/100775801/161417327-13e85bc7-e830-45fb-9839-37623a99ad13.png)
+
+Inbound rules
+
+![image](https://user-images.githubusercontent.com/100775801/161417361-d6d57c0c-6319-472c-a867-7e2517936e17.png)
+
+
+
+
 
 
 
