@@ -25,7 +25,10 @@ AWS account with management console access and full access to VPC and EC2 servic
 5. Creating public route tables and adding Internet gateway entry.
 6. Creating NAT gateway for private subnet
 7. Creating private route table and adding NAT gateway entry. Adding private subnet to route table association
-8. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
+8. Creating security group for Bastion server.
+9. Creating security group for wordpress server.
+10. Creating security group for database server.
+11. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
 
 
 # 1- Creating a VPC with CIDR subnet
@@ -137,6 +140,12 @@ Next we are adding the private subnet to the private route table. For that selec
 Select the private subnet and click save associations
 
 ![image](https://user-images.githubusercontent.com/100775801/161416131-3d769082-9083-4552-8910-467fa752c4b6.png)
+
+
+# 8-Creating security group for Bastion server
+
+## Bastion server
+A bastion is a special purpose server instance that is designed to be the primary access point from the Internet and acts as a proxy to your other EC2 instances.
 
 
 
