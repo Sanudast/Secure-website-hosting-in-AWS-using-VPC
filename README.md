@@ -1,4 +1,4 @@
-# VPC-Secure-website-hosting-using-Ec2
+# Secure website hosting in AWS using VPC
 
 
 ## Description
