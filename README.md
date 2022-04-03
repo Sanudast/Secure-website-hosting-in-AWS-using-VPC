@@ -64,6 +64,15 @@ Subnet creation completed.
 
 # 3- Enabling auto-assign public IPv4 address public subnets
 
+We need public IP for our public subnets. From subnets section we can enable the auto-assign public IPv4 address. For that select the public subnets and click edit subnet settings. 
+
+![image](https://user-images.githubusercontent.com/100775801/161414264-755fef9f-1c55-447f-92cb-2dc437a593c5.png)
+
+Then enable auto-assign public IPv4 and save the settings.
+![image](https://user-images.githubusercontent.com/100775801/161414329-5ec8f9f2-f039-42a6-a2ca-d552078e1785.png)
+
+
+
 
 
 
