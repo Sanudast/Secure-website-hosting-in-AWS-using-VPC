@@ -236,7 +236,7 @@ Follow the previous steps to create instance.
 Now the entire infra setup is completed. Now you can access the website instance by login to bastion server and install any webserver application like apache, ngnix and upload the website contents.
 SSH to bastion server and from there SSH to database instance. After that install database server like mysql,mariadab etc and put the database in it. We can point a domain A record to website instance public IP to view the site.
 
-#Conclusion
+# Conclusion
 
 This tutorial we discussed how to host a website in VPC with more security.  The goal is to get more security for the website and we have done that using this VPC setup.
 
