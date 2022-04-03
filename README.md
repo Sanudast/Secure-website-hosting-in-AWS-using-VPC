@@ -125,6 +125,20 @@ Next we are going to create a private route table for private subnet. Click the 
 I'm providing private-rtbl as route table name and select the VPC.
 ![image](https://user-images.githubusercontent.com/100775801/161415950-cb0c8231-4b87-47d9-8c71-8743f41fffc2.png)
 
+Adding the Nat gateway to the route table.
+
+![image](https://user-images.githubusercontent.com/100775801/161416046-7c956fa5-94b9-44d2-b376-1a557e071284.png)
+
+
+Next we are adding the private subnet to the private route table. For that select the route table and in action section select edit subnet association.
+
+![image](https://user-images.githubusercontent.com/100775801/161416101-dea75cf3-b326-47b6-92e6-0982092ca87c.png)
+
+Select the private subnet and click save associations
+
+![image](https://user-images.githubusercontent.com/100775801/161416131-3d769082-9083-4552-8910-467fa752c4b6.png)
+
+
 
 
 
