@@ -21,10 +21,11 @@ AWS account with management console access and full access to VPC and EC2 servic
 1. Creating a VPC with CIDR subnet
 2. Creating 2 public and 1 private subnet.
 3. Enabling auto-assign public IPv4 address public subnets. 
-4. Creating private and public route tables and associate the subnets.
-5. Creating Internte gateway for public subnet and adding it to public route table.
-6. Creating Nat gateway for private subnet and adding it to private route table.
-7. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
+4. Creating Internte gateway and attaching to VPC
+5. Creating private and public route tables and associate the subnets.
+6. Creating Internte gateway for public subnet
+7. Creating Nat gateway for private subnet and adding it to private route table.
+8. Creating 3 Ec2 instance (Bastion instance, Website Instance, Database Instance).
 
 
 # 1- Creating a VPC with CIDR subnet
@@ -62,6 +63,7 @@ you can refer the link for more informtaion about the subneting.
 
 Subnet creation completed.
 
+
 # 3- Enabling auto-assign public IPv4 address public subnets
 
 We need public IP for our public subnets. From subnets section we can enable the auto-assign public IPv4 address. For that select the public subnets and click edit subnet settings. 
@@ -70,6 +72,25 @@ We need public IP for our public subnets. From subnets section we can enable the
 
 Then enable auto-assign public IPv4 and save the settings.
 ![image](https://user-images.githubusercontent.com/100775801/161414329-5ec8f9f2-f039-42a6-a2ca-d552078e1785.png)
+
+
+# 4- Creating Internte gateway and attaching to VPC
+
+Next we are going to create internet gateway. For that go to the internet gateway section and click on create internte gateway.
+![image](https://user-images.githubusercontent.com/100775801/161414507-12d20e1a-7795-4965-ae80-af434c7f1b81.png)
+
+Here am provided vpcproject-ig as internet gateway name and creating the IG.
+
+![image](https://user-images.githubusercontent.com/100775801/161414558-92b9d0ab-721d-4777-a014-f82ccbc17176.png)
+
+After creating the Internet gateway we are attaching it to our VPC. For that select the Internet gateway and click on attach to VPC in actions.
+
+![image](https://user-images.githubusercontent.com/100775801/161414636-695a1396-a957-42a0-8682-27051831aaf5.png)
+
+Then select the VPC and click attach internet gateway.
+
+![image](https://user-images.githubusercontent.com/100775801/161414678-f62782a7-3ef1-45c5-bc17-084c4e2536bb.png)
+
 
 
 
